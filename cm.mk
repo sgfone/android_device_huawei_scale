@@ -16,18 +16,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/cherry/device.mk)
-
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product, device/huawei/scale/device.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_DEVICE := cherry
-PRODUCT_NAME := cm_cherry
+PRODUCT_DEVICE := scale
+PRODUCT_NAME := cm_scale
 PRODUCT_BRAND := Huawei
-PRODUCT_MODEL := cherry
+PRODUCT_MODEL := scale
 PRODUCT_MANUFACTURER := HUAWEI
 
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
