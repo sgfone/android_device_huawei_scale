@@ -13,11 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product-if-exists, vendor/huawei/cherry/cherry-vendor.mk)
+$(call inherit-product-if-exists, vendor/huawei/scale/scale-vendor.mk)
 
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc-nci.conf:system/etc/nfc-nci.conf \
     $(LOCAL_PATH)/releasetools/device_check.sh:install/bin/device_check.sh
 
-$(call inherit-product, device/huawei/msm8916-common/msm8916.mk)
+$(call inherit-product, device/huawei/msm8909-common/msm8909.mk)
