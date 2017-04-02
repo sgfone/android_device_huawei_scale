@@ -1,8 +1,11 @@
+# Audio
+vendor/lib/libacdbloader.so
+
 # Camera
 bin/mm-qcamera-daemon
 lib/libdmd_report.so
-lib/libmmcamera_interface.so
-lib/libmm-qcamera.so
+# lib/libmmcamera_interface.so
+# lib/libmm-qcamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
