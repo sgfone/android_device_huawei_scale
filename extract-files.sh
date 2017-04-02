@@ -19,7 +19,7 @@ set -e
 
 # Required!
 export DEVICE=scale
-export DEVICE_COMMON=msm8909-common
+export DEVICE_COMMON=msm8916-common
 export VENDOR=huawei
 
 ./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
