@@ -156,7 +156,7 @@ void init_target_properties()
         property_set("ro.build.fingerprint", "Huawei/SCL-U21/hwSCL-Q:7.1.1/HuaweiSCL-U21/C432B150:user/release-keys");
     }
     /* SCL-U23 */
-    if (buf.find("SCL-U21") != std::string::npos) {
+    if (buf.find("SCL-U23") != std::string::npos) {
         property_set("ro.product.model", "SCL-U23");
         property_set("ro.product.device", "SCL-U23");
         property_set("ro.build.product", "SCL-U23");
