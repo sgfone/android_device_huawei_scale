@@ -29,3 +29,6 @@ ro.sys.fw.dex2oat_thread_count=3
 
 # Storage
 ro.sys.sdcardfs=true
+
+# Hack HAL1 Legacy
+camera2.portability.force_api=1

@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
-#           (C) 2017 The LineageOS Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FORCE_32_BIT := true
-
-include device/cyanogen/msm8909-common/BoardConfigCommon.mk
+include device/huawei/msm8909-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/huawei/scale
 VENDOR_PATH := device/huawei/scale
@@ -60,7 +57,7 @@ TARGET_LIBINIT_MSM8909_DEFINES_FILE := $(VENDOR_PATH)/init/init_scale.cpp
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
+TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
 TARGET_KERNEL_CONFIG := lineageos_scale_defconfig
 
 # Lights
@@ -84,6 +81,7 @@ TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += $(VENDOR_PATH)
+
 #RECOVERY_VARIANT := twrp
 ifneq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/recovery.fstab
@@ -116,5 +114,5 @@ USE_SENSOR_MULTI_HAL := true
 TARGET_PROVIDES_WCNSS_QMI := true
 
 # inherit from the proprietary version
--include vendor/huawei/msm8916-common/BoardConfigVendor.mk
+-include vendor/huawei/msm8909-common/BoardConfigVendor.mk
 -include vendor/huawei/scale/BoardConfigVendor.mk
