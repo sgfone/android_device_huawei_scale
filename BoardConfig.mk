@@ -18,9 +18,6 @@ include device/huawei/msm8909-common/BoardConfigCommon.mk
 DEVICE_PATH := device/huawei/scale
 VENDOR_PATH := device/huawei/scale
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := Honor4a,honor4a,Honor4A,honor4A,y6,Y6,scale,Scale,SCL-AL00,SCL-CL00,SCL-L01,SCL-L02,SCL-L03,SCL-L04,SCL-L21,SCL-TL00,SCL-TL10,SCL-U03,SCL-U21,SCL-U23,SCL-U31
-
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 
