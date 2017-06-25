@@ -37,8 +37,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # CMHW
 BOARD_HARDWARE_CLASS += \
     $(VENDOR_PATH)/cmhw
-
-# Wake Gestures
 TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
 
 # Flags
@@ -80,6 +78,11 @@ TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += $(VENDOR_PATH)
+
+#RECOVERY_VARIANT := twrp
+ifneq ($(RECOVERY_VARIANT),twrp)
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/recovery.fstab
+else
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/twrp.fstab
 RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
 DEVICE_RESOLUTION := 720x1280
@@ -92,6 +95,7 @@ TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "accelerometer\x0alis3dh-accel"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
+endif
 
 # RIL
 BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
