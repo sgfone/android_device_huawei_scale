@@ -1,6 +1,4 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
- * Copyright (C) 2014 The Linux Foundation. All rights reserved.
  * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +16,11 @@
 
 
 // #define LOG_NDEBUG 0
+#define LOG_TAG "lights.msm8909"
 
 #include <cutils/log.h>
 
 #include <stdint.h>
-#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
@@ -38,20 +36,9 @@
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
-static struct light_state_t g_notification;
-static struct light_state_t g_battery;
-static int g_attention = 0;
 
 char const*const LCD_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
-
-/* libqmi_oem_api.so */
-#define QMI_HUAWEI_NOT_ID 0x8F
-extern int oem_qmi_common_stream_from_modem_len(int id,
-                                                void *buf_in,
-                                                size_t buf_in_size,
-                                                void *buf_out,
-                                                size_t *buf_out_size);
 
 /**
  * device methods
@@ -86,12 +73,6 @@ write_int(char const* path, int value)
 }
 
 static int
-is_lit(struct light_state_t const* state)
-{
-    return state->color & 0x00ffffff;
-}
-
-static int
 rgb_to_brightness(struct light_state_t const* state)
 {
     int color = state->color & 0x00ffffff;
@@ -112,111 +93,6 @@ set_light_backlight(struct light_device_t* dev,
     err = write_int(LCD_FILE, brightness);
     pthread_mutex_unlock(&g_lock);
     return err;
-}
-
-struct qmi_huawei_not {
-    unsigned int color;
-    int flashOnMS;
-    int flashOffMS;
-    int flashMode;
-} __attribute__((packed));
-
-static int
-set_speaker_light_locked(struct light_device_t* dev,
-        struct light_state_t const* state)
-{
-    int red, green, blue;
-    int blink;
-    int onMS, offMS;
-    unsigned int colorRGB;
-    int ret;
-    struct qmi_huawei_not notifConfig;
-    size_t buf_out_size = sizeof(notifConfig);
-    char buf_out = 0;
-
-    if(!dev) {
-        return -1;
-    }
-
-    switch (state->flashMode) {
-        case LIGHT_FLASH_TIMED:
-            onMS = state->flashOnMS;
-            offMS = state->flashOffMS;
-            break;
-        case LIGHT_FLASH_NONE:
-        default:
-            onMS = 0;
-            offMS = 0;
-            break;
-    }
-
-    colorRGB = state->color;
-
-#if 0
-    ALOGD("set_speaker_light_locked mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
-            state->flashMode, colorRGB, onMS, offMS);
-#endif
-
-    notifConfig.color = colorRGB;
-    notifConfig.flashMode = state->flashMode;
-    notifConfig.flashOnMS = onMS;
-    notifConfig.flashOffMS = offMS;
-
-    ret = oem_qmi_common_stream_from_modem_len(QMI_HUAWEI_NOT_ID, &notifConfig,
-                                               sizeof(notifConfig), &buf_out,
-                                               &buf_out_size);
-    if (ret || buf_out_size != 1)
-        ALOGE("failed to write notification LED ret=%d buf_out_size=%d\n",
-              ret, buf_out_size);
-
-    return 0;
-}
-
-static void
-handle_speaker_battery_locked(struct light_device_t* dev)
-{
-    if (is_lit(&g_notification)) {
-        set_speaker_light_locked(dev, &g_notification);
-    } else {
-        set_speaker_light_locked(dev, &g_battery);
-    }
-}
-
-static int
-set_light_battery(struct light_device_t* dev,
-        struct light_state_t const* state)
-{
-    pthread_mutex_lock(&g_lock);
-    g_battery = *state;
-    handle_speaker_battery_locked(dev);
-    pthread_mutex_unlock(&g_lock);
-    return 0;
-}
-
-static int
-set_light_notifications(struct light_device_t* dev,
-        struct light_state_t const* state)
-{
-    pthread_mutex_lock(&g_lock);
-    g_notification = *state;
-    handle_speaker_battery_locked(dev);
-    pthread_mutex_unlock(&g_lock);
-    return 0;
-}
-
-static int
-set_light_attention(struct light_device_t* dev,
-        struct light_state_t const* state)
-{
-    pthread_mutex_lock(&g_lock);
-    if (state->flashMode == LIGHT_FLASH_HARDWARE) {
-        g_attention = state->flashOnMS;
-    } else if (state->flashMode == LIGHT_FLASH_NONE) {
-        g_attention = 0;
-    }
-    handle_speaker_battery_locked(dev);
-    pthread_mutex_unlock(&g_lock);
-    return 0;
 }
 
 /** Close the lights device */
@@ -245,12 +121,6 @@ static int open_lights(const struct hw_module_t* module, char const* name,
 
     if (0 == strcmp(LIGHT_ID_BACKLIGHT, name))
         set_light = set_light_backlight;
-    else if (0 == strcmp(LIGHT_ID_BATTERY, name))
-        set_light = set_light_battery;
-    else if (0 == strcmp(LIGHT_ID_NOTIFICATIONS, name))
-        set_light = set_light_notifications;
-    else if (0 == strcmp(LIGHT_ID_ATTENTION, name))
-        set_light = set_light_attention;
     else
         return -EINVAL;
 
@@ -285,7 +155,8 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_major = 1,
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "cherry lights Module",
-    .author = "Google, Inc., dianlujitao",
+    .name = "Huawei lights module",
+    .author = "Konsta",
     .methods = &lights_module_methods,
 };
+
