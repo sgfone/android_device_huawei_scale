@@ -54,6 +54,8 @@ TARGET_LIBINIT_MSM8909_DEFINES_FILE := $(VENDOR_PATH)/init/init_scale.cpp
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9/bin
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
 TARGET_KERNEL_CONFIG := lineageos_scale_defconfig
 
