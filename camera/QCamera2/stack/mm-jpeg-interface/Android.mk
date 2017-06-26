@@ -2,9 +2,6 @@ OLD_LOCAL_PATH := $(LOCAL_PATH)
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_CLANG_CFLAGS += \
-        -Wno-error=unused-variable
-
 LOCAL_CFLAGS+= -D_ANDROID_
 
 LOCAL_C_INCLUDES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
