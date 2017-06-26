@@ -31,6 +31,8 @@ ro.sys.fw.dex2oat_thread_count=3
 ro.sys.sdcardfs=true
 
 # Hack HAL1 Legacy
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 camera2.portability.force_api=1
 
 # Performance
