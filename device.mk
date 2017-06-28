@@ -128,10 +128,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DozeService
 
-# Sensors HAL
+# Sensors
 PRODUCT_PACKAGES += \
     calmodule.cfg \
-    sensors.msm8909 \
+    libcalmodule_common \
+    sensors.msm8916 \
     sensors.native
 
 PRODUCT_COPY_FILES += \
