@@ -77,8 +77,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8909 \
-    Snap
+    Camera2
 
 # Compat symbols
 PRODUCT_PACKAGES += \
