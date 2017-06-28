@@ -51,16 +51,16 @@
     <ctl name="TTY Mode" value="Off" />
     <ctl name="HPHL Volume" value="9" />
     <ctl name="HPHR Volume" value="9" />
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
+    <ctl name="RX1 Digital Volume" value="92" />
+    <ctl name="RX2 Digital Volume" value="92" />
     <ctl name="RX3 Digital Volume" value="84" />
     <ctl name="IIR1 INP1 Volume" value="84" />
     <ctl name="IIR1 INP2 Volume" value="84" />
     <ctl name="IIR1 INP3 Volume" value="84" />
     <ctl name="IIR1 INP4 Volume" value="84" />
-    <ctl name="ADC1 Volume" value="4" />
-    <ctl name="ADC2 Volume" value="4" />
-    <ctl name="ADC3 Volume" value="4" />
+    <ctl name="ADC1 Volume" value="13" />
+    <ctl name="ADC2 Volume" value="13" />
+    <ctl name="ADC3 Volume" value="13" />
     <ctl name="DEC1 Volume" value="84" />
     <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC2 MUX" value="ZERO" />
@@ -81,11 +81,10 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
     <ctl name="SPK DAC Switch" value="0" />
-    <ctl name="SPK DAC Switch" value="0" />
-    <ctl name="Speaker Boost" value="ENABLE" />
-    <ctl name="EAR PA Boost" value="ENABLE" />
-    <ctl name="EAR PA Gain" value="POS_1P5_DB" />
+    <ctl name="Speaker Boost" value="DISABLE" />
     <ctl name="MICBIAS CAPLESS Switch" value="0" />
+    <ctl name="EAR PA Boost" value="DISABLE" />
+    <ctl name="EAR PA Gain" value="POS_6_DB" />
     <ctl name="MI2S_RX Channels" value="One" />
     <ctl name="MI2S_TX Channels" value="One" />
     <ctl name="SPK" value="ON" />
@@ -623,6 +622,18 @@
         <ctl name="RX2 MIX2 INP1" value="IIR1" />
         <ctl name="IIR1 INP1 Volume" value="0" />
     </path>
+	
+    <path name="voip-headphones">
+        <path name="headphones" />
+    </path>
+
+    <path name="voip-speaker">
+        <path name="speaker" />
+    </path>
+
+    <path name="voip-handset">
+        <path name="handset" />
+    </path>
 
     <path name="voice-handset">
         <path name="sidetone-handset" />
@@ -828,3 +839,4 @@
     </path>
 
 </mixer>
+
