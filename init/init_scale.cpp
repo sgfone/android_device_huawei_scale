@@ -61,148 +61,148 @@ void init_target_properties()
             break;
     fin.close();
     
-    property_set("qemu.hw.mainkeys", "0");
+    property_override("qemu.hw.mainkeys", "0");
 
     /* SCL-AL00 */
     if (buf.find("SCL-AL00") != std::string::npos) {
-        property_set("ro.product.model", "SCL-AL00");
-        property_set("ro.product.device", "SCL-AL00");
-        property_set("ro.build.product", "SCL-AL00");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-AL00");
+        property_override("ro.product.device", "SCL-AL00");
+        property_override("ro.build.product", "SCL-AL00");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-CL00 */
     if (buf.find("SCL-CL00") != std::string::npos) {
-        property_set("ro.product.model", "SCL-CL00");
-        property_set("ro.product.device", "SCL-CL00");
-        property_set("ro.build.product", "SCL-CL00");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-CL00");
+        property_override("ro.product.device", "SCL-CL00");
+        property_override("ro.build.product", "SCL-CL00");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-L01 */
     if (buf.find("SCL-L01") != std::string::npos) {
-        property_set("ro.product.model", "SCL-L01");
-        property_set("ro.product.device", "SCL-L01");
-        property_set("ro.build.product", "SCL-L01");
+        property_override("ro.product.model", "SCL-L01");
+        property_override("ro.product.device", "SCL-L01");
+        property_override("ro.build.product", "SCL-L01");
     }
     /* SCL-L02 */
     if (buf.find("SCL-L02") != std::string::npos) {
-        property_set("ro.product.model", "SCL-L02");
-        property_set("ro.product.device", "SCL-L02");
-        property_set("ro.build.product", "SCL-L02");
+        property_override("ro.product.model", "SCL-L02");
+        property_override("ro.product.device", "SCL-L02");
+        property_override("ro.build.product", "SCL-L02");
     }
     /* SCL-L03 */
     if (buf.find("SCL-L03") != std::string::npos) {
-        property_set("ro.product.model", "SCL-L03");
-        property_set("ro.product.device", "SCL-L03");
-        property_set("ro.build.product", "SCL-L03");
+        property_override("ro.product.model", "SCL-L03");
+        property_override("ro.product.device", "SCL-L03");
+        property_override("ro.build.product", "SCL-L03");
     }
     /* SCL-L04 */
     if (buf.find("SCL-L04") != std::string::npos) {
-        property_set("ro.product.model", "SCL-L04");
-        property_set("ro.product.device", "SCL-L04");
-        property_set("ro.build.product", "SCL-L04");
+        property_override("ro.product.model", "SCL-L04");
+        property_override("ro.product.device", "SCL-L04");
+        property_override("ro.build.product", "SCL-L04");
     }
     /* SCL-L21 */
     if (buf.find("SCL-L21") != std::string::npos) {
-        property_set("ro.product.model", "SCL-L21");
-        property_set("ro.product.device", "SCL-L21");
-        property_set("ro.build.product", "SCL-L21");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-L21");
+        property_override("ro.product.device", "SCL-L21");
+        property_override("ro.build.product", "SCL-L21");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-TL00 */
     if (buf.find("SCL-TL00") != std::string::npos) {
-        property_set("ro.product.model", "SCL-TL00");
-        property_set("ro.product.device", "SCL-TL00");
-        property_set("ro.build.product", "SCL-TL00");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-TL00");
+        property_override("ro.product.device", "SCL-TL00");
+        property_override("ro.build.product", "SCL-TL00");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-TL10 */
     if (buf.find("SCL-TL10") != std::string::npos) {
-        property_set("ro.product.model", "SCL-TL10");
-        property_set("ro.product.device", "SCL-TL10");
-        property_set("ro.build.product", "SCL-TL10");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-TL10");
+        property_override("ro.product.device", "SCL-TL10");
+        property_override("ro.build.product", "SCL-TL10");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-U03 */
     if (buf.find("SCL-U03") != std::string::npos) {
-        property_set("ro.product.model", "SCL-U03");
-        property_set("ro.product.device", "SCL-U03");
-        property_set("ro.build.product", "SCL-U03");
+        property_override("ro.product.model", "SCL-U03");
+        property_override("ro.product.device", "SCL-U03");
+        property_override("ro.build.product", "SCL-U03");
     }
     /* SCL-U21 */
     if (buf.find("SCL-U21") != std::string::npos) {
-        property_set("ro.product.model", "SCL-U21");
-        property_set("ro.product.device", "SCL-U21");
-        property_set("ro.build.product", "SCL-U21");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-U21");
+        property_override("ro.product.device", "SCL-U21");
+        property_override("ro.build.product", "SCL-U21");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-U23 */
     if (buf.find("SCL-U23") != std::string::npos) {
-        property_set("ro.product.model", "SCL-U23");
-        property_set("ro.product.device", "SCL-U23");
-        property_set("ro.build.product", "SCL-U23");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-U23");
+        property_override("ro.product.device", "SCL-U23");
+        property_override("ro.build.product", "SCL-U23");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
     /* SCL-U31 */
     if (buf.find("SCL-U31") != std::string::npos) {
-        property_set("ro.product.model", "SCL-U31");
-        property_set("ro.product.device", "SCL-U31");
-        property_set("ro.build.product", "SCL-U31");
-        property_set("ro.config.dsds_mode", "umts_gsm");
-        property_set("persist.dsds.enabled", "true");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("ro.telephony.ril.config", "simactivation");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("ro.multi.rid", "true");
-        property_set("ro.config.hw_showSimName", "true");
-        property_set("ro.dual.sim.phone", "true");
+        property_override("ro.product.model", "SCL-U31");
+        property_override("ro.product.device", "SCL-U31");
+        property_override("ro.build.product", "SCL-U31");
+        property_override("ro.config.dsds_mode", "umts_gsm");
+        property_override("persist.dsds.enabled", "true");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("ro.telephony.ril.config", "simactivation");
+        property_override("persist.radio.dont_use_dsd", "true");
+        property_override("ro.multi.rid", "true");
+        property_override("ro.config.hw_showSimName", "true");
+        property_override("ro.dual.sim.phone", "true");
     }
 }
