@@ -44,6 +44,9 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
 # Flags
 BOARD_NO_SECURE_DISCARD := true
 
+# Memory
+MALLOC_SVELTE := true
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
