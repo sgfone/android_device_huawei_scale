@@ -56,6 +56,7 @@ TARGET_USE_COMPAT_GRALLOC_ALIGN := true
 
 # Init
 TARGET_LIBINIT_MSM8909_DEFINES_FILE := $(VENDOR_PATH)/init/init_scale.cpp
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
 TARGET_KERNEL_CONFIG := lineageos_scale_defconfig
@@ -92,7 +93,7 @@ DEVICE_RESOLUTION := 720x1280
 RECOVERY_SDCARD_ON_DATA := true
 TW_USE_TOOLBOX := true
 TW_NEW_ION_HEAP := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_TARGET_USES_QCOM_BSP := true
 TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "accelerometer\x0alis3dh-accel"
