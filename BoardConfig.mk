@@ -58,7 +58,7 @@ TARGET_USE_COMPAT_GRALLOC_ALIGN := true
 TARGET_LIBINIT_MSM8909_DEFINES_FILE := $(VENDOR_PATH)/init/init_scale.cpp
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
+TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
 TARGET_KERNEL_CONFIG := lineageos_scale_defconfig
 
 # Lights
@@ -100,7 +100,10 @@ TW_INPUT_BLACKLIST := "accelerometer\x0alis3dh-accel"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_INCLUDE_CRYPTO := true
-TW_NO_SCREEN_TIMEOUT := true
+# TW_NO_SCREEN_TIMEOUT := true
+# Include tzdata for recovery
+# PRODUCT_COPY_FILES += \
+#    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 endif
 
 # RIL

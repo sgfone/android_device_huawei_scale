@@ -77,7 +77,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Camera2
+    camera.msm8909 \
+    Snap
 
 # Compat symbols
 PRODUCT_PACKAGES += \
@@ -131,8 +132,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     calmodule.cfg \
-    libcalmodule_common \
-    sensors.msm8916 \
+    sensors.msm8909 \
     sensors.native
 
 PRODUCT_COPY_FILES += \
