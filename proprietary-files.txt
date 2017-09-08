@@ -2,7 +2,6 @@
 vendor/lib/libacdbloader.so
 
 # Camera
-lib/hw/camera.msm8909.so
 bin/mm-qcamera-daemon
 lib/libdmd_report.so
 lib/libmmcamera_interface.so
@@ -119,3 +118,8 @@ etc/firmware/venus.b03
 etc/firmware/venus.b04
 etc/firmware/venus.mbn
 etc/firmware/venus.mdt
+
+# Huawei
+bin/libqmi_oem_main
+bin/rmt_oeminfo
+bin/hw_test_diag

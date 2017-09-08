@@ -34,13 +34,3 @@ ro.sys.sdcardfs=true
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
 camera2.portability.force_api=1
-
-# Reduce the black screen time of the proximity sensor
-ro.lge.proximity.delay=25
-mot.proximity.delay=25
-
-# Liquid Smooth UI
-persist.service.lgospd.enable=0
-persist.service.pcsync.enable=0
-ro.ril.enable.a52=1
-ro.ril.enable.a53=0
