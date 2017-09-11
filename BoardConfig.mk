@@ -66,7 +66,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000 # (20M)
@@ -100,9 +99,9 @@ TW_INPUT_BLACKLIST := "accelerometer\x0alis3dh-accel"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_INCLUDE_CRYPTO := true
-# TW_NO_SCREEN_TIMEOUT := true
+TW_NO_SCREEN_TIMEOUT := true
 # Include tzdata for recovery
-# PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
 #    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 endif
 
@@ -120,14 +119,14 @@ USE_SENSOR_MULTI_HAL := true
 TARGET_PROVIDES_WCNSS_QMI := true
 
 # dexopt
-ifeq ($(HOST_OS),linux)
-    ifeq ($(TARGET_BUILD_VARIANT),user)
-        ifeq ($(WITH_DEXPREOPT),)
-            WITH_DEXPREOPT := true
-            WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
-        endif
-    endif
-endif
+#ifeq ($(HOST_OS),linux)
+#    ifeq ($(TARGET_BUILD_VARIANT),user)
+#        ifeq ($(WITH_DEXPREOPT),)
+#            WITH_DEXPREOPT := true
+#            WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+#        endif
+#    endif
+#endif
 
 # inherit from the proprietary version
 -include vendor/huawei/msm8909-common/BoardConfigVendor.mk
