@@ -128,10 +128,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc
 
-# Doze
-PRODUCT_PACKAGES += \
-    DozeService
-
 # Sensors
 PRODUCT_PACKAGES += \
     calmodule.cfg \
