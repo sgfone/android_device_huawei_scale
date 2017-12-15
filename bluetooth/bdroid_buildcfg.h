@@ -5,6 +5,7 @@
  *  for attribution purposes only.
  *
  * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,15 +22,47 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME   "Huawei Y6"
+#include <cutils/properties.h>
+#include <string.h>
+
+static inline const char* BtmGetDefaultName()
+{
+	char product_model[PROPERTY_VALUE_MAX];
+	property_get("ro.product.model", product_model, "");
+
+	if (strstr(product_model, "SCL-AL00"))
+		return "HUAWEI SCL-AL00";
+	if (strstr(product_model, "SCL-CL00"))
+		return "HUAWEI SCL-CL00";
+	if (strstr(product_model, "SCL-CL01"))
+		return "HUAWEI SCL-CL01";
+	if (strstr(product_model, "SCL-CL02"))
+		return "HUAWEI SCL-CL02";
+	if (strstr(product_model, "SCL-CL03"))
+		return "HUAWEI SCL-CL03";
+	if (strstr(product_model, "SCL-CL04"))
+		return "HUAWEI SCL-CL04";
+	if (strstr(product_model, "SCL-L21"))
+		return "HUAWEI SCL-L21";
+	if (strstr(product_model, "SCL-TL00"))
+		return "HUAWEI SCL-TL00";
+	if (strstr(product_model, "SCL-TL10"))
+		return "HUAWEI SCL-TL10";
+	if (strstr(product_model, "SCL-U03"))
+		return "HUAWEI SCL-U03";
+	if (strstr(product_model, "SCL-U21"))
+		return "HUAWEI SCL-U21";
+	if (strstr(product_model, "SCL-U23"))
+		return "HUAWEI SCL-U23";
+	if (strstr(product_model, "SCL-U31"))
+		return "HUAWEI SCL-U31";
+	if (strstr(product_model, "SCC-U21"))
+		return "HUAWEI SCC-U21";
+
+	return "";
+}
+
+#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 #define BLUETOOTH_QTI_SW TRUE
-// Disables read remote device feature
-#define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
-#define MAX_ACL_CONNECTIONS    7
-#define MAX_L2CAP_CHANNELS    16
 #define BLE_VND_INCLUDED   TRUE
-// skips conn update at conn completion
-#define BTA_BLE_SKIP_CONN_UPD  FALSE
-#define BLE_PERIPHERAL_ADV_NAME  FALSE
-#define BT_CLEAN_TURN_ON_DISABLED 1
 #endif
