@@ -87,6 +87,7 @@ PRODUCT_PACKAGES += \
 
 # Compat symbols
 PRODUCT_PACKAGES += \
+    libshim_atomic \
     libshim_cutils
 
 # GPS
