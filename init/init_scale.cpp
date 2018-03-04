@@ -41,7 +41,7 @@
 #include "init_msm8909.h"
 
 using android::base::GetProperty;
-using android::init::property_set
+using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
 {
