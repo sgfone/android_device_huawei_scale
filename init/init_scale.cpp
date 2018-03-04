@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+   Copyright (c) 2018, The Linux Foundation. All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -32,13 +32,16 @@
 #include <string>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <android-base/properties.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
+#include "vendor_init.h"
 #include "util.h"
 
 #include "init_msm8909.h"
+
+using android::base::GetProperty;
+using android::init::property_set
 
 void property_override(char const prop[], char const value[])
 {
