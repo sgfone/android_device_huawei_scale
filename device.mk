@@ -134,6 +134,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
     calmodule.cfg \
     sensors.msm8909 \
     sensors.native
