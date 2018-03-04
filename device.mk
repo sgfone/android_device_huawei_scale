@@ -20,7 +20,9 @@ $(call inherit-product-if-exists, vendor/huawei/msm8909-common/msm8909-common-ve
 TARGET_BOARD_PLATFORM_VARIANT := msm8909
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
