@@ -1094,7 +1094,7 @@ void *QCameraStreamMemory::getPtr(uint32_t index) const
 QCameraVideoMemory::QCameraVideoMemory(camera_request_memory getMemory,
                                        void* cbCookie,
                                        bool cached)
-    : QCameraStreamMemory(memory, cbCookie, cached)
+    : QCameraStreamMemory(getMemory, cbCookie, cached)
 {
     memset(mMetadata, 0, sizeof(mMetadata));
 }
