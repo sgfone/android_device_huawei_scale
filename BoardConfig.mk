@@ -86,7 +86,7 @@ TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += $(VENDOR_PATH)
 
-#RECOVERY_VARIANT := twrp
+RECOVERY_VARIANT := twrp
 ifneq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/recovery.fstab
 else
